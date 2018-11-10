@@ -1,25 +1,12 @@
-/**
- * H8_P0_W4_E1
- * Angka Prima
- */
-
-function angkaPrima(angka) {
-    var prime = true
-
-    for (var i = 2; i < angka; i++) {
-        if (angka % i === 0) {
-            prime = false
-        }
+function angkaPrima(num) {
+    if (num < 2) return false;
+    for (var i = 2; i < num; i++) {
+        if (num%i==0)
+            return false;
     }
-
-    if (angka < 2) {
-        prime = false
-    }
-
-    return prime
+    return true;
 }
 
-// TEST CASES
 console.log(angkaPrima(3)); // true
 console.log(angkaPrima(7)); // true
 console.log(angkaPrima(6)); // false

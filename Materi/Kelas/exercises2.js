@@ -1,23 +1,23 @@
-function tampikanNilaiGenap(number) {
-    var hasil = [];
-    for(var i = 0; i < number.length; i++) {
-        if (number[i] % 2 === 0) {
-            hasil.push(number[i])
-        }
-    }
-    return hasil;
+var studentMorning = ['andi', 'budi', 'cindi', 'dani']
+var studentEvening = ['andi', 'budi', 'cindi', 'dani', 'eko', 'fani']
 
+var gabung = studentMorning;
+for (var i = 0; i < studentEvening.length; i++) {
+    gabung.push(studentEvening[i]);
 }
-
-function tampilkanIndexGenap(number) {
-    var hasil = [];
-    for (var i = 0; i < number.length; i++) {
-        if (i % 2 === 0) {
-            hasil.push(number[i]) 
+var hasil = [];
+for (var i = 0; i < gabung.length; i++) {
+    var isDuplikat = false;
+    for (var j = 0; j < hasil.length; j++) {
+        if (gabung[i] === hasil[j]) {
+            isDuplikat = true;
+            break;
         }
+    
     }
-    return hasil;
+    if (isDuplikat === false) {
+        hasil.push(gabung[i]);
+    }
 }
-
-console.log(tampikanNilaiGenap([1, 2, 4, 7, 8, 11]));
-console.log(tampilkanIndexGenap([1, 2, 4, 7, 8, 11]));
+console.log(gabung)
+console.log(hasil)

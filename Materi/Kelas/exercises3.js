@@ -19,6 +19,7 @@ function gabungStudent(arr1, arr2) {
             hasil.push(gabung[i]);
         }
     }
+    return hasil;
 
 }
-console.log(gabungStudent(studentMorning. studentEvening))
+console.log(gabungStudent(studentMorning, studentEvening))

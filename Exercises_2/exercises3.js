@@ -23,7 +23,7 @@ function fpb(angka1, angka2) {
     }
     // memasukan faktor array dari angka1 dan angka2 ke faktorArr
     faktorArr.push(faktor1, faktor2)
-    // console.log(faktorArr)
+    console.log(faktorArr)
     var faktorBesar;
     var faktorKecil;
     // untuk mengetahui faktor array mana lebih panjang
@@ -38,7 +38,7 @@ function fpb(angka1, angka2) {
     // untuk mengetahui nilai faktor terbesar dari faktor array
     var groupFaktor = []
     for (var i = 0; i < faktorBesar.length; i++) {
-        var isSame = true;
+        var isSame = false;
         for (var j = 0; j < faktorKecil.length; j++) {
             if (faktorBesar[i] == faktorKecil[j]) {
                 isSame = true;
@@ -47,9 +47,9 @@ function fpb(angka1, angka2) {
         }
         if (isSame === true) {
             groupFaktor.push(faktorKecil[index])
-        }
+        } 
     }
-    // console.log(groupFaktor)
+    console.log(groupFaktor) 
     return groupFaktor[groupFaktor.length - 1]
 
 }

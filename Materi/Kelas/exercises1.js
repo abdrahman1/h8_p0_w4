@@ -1,29 +1,30 @@
-function asteriks(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
-        var isi = '';
-        for (var j = 0; j <= i; j++) {
-            isi += '*';
+function hapusDouble(array) {
+    var hasilDouble = [];
+    for (var i = 0; i < array.length; i++) {
+        var isDouble = false;
+        for (var j = 0; j < hasilDouble.length; j++) {
+            if (array[i] === hasilDouble[j]) {
+                isDouble = true;
+                break;
+            }
         }
-        arr.push(isi);
-    }
-    return arr;
-}
-console.log(asteriks(3));
-console.log(asteriks(5));
-console.log('\n');
-
-function asteriks2D(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
-        var isi = [];
-        for (var j = 0; j <= i; j++) {
-            isi.push("*");
+        if (isDouble === false) {
+            hasilDouble.push(array[i])
         }
-        arr.push(isi);
     }
-    return arr
+    return hasilDouble;
+
+} 
+console.log(hapusDouble(['joni', 'budi', 'ana', 'joni']));
+
+
+function gabungStudent(student1, student2) {
+    var gabung = student1;
+    
+    for (var i = 0; i < student1.length; i++) {
+        gabung.push(student2[i]);
+    }
+    return student1;
 }
 
-console.log(asteriks2D(3));
-console.log(asteriks2D(5));
+console.log(gabungStudent(['andi', 'badu', 'cindi', 'dani'], ['andi', 'badu', 'cindi', 'dani', 'Eko', 'Fani']));

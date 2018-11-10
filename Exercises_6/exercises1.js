@@ -2,59 +2,27 @@
  * H8_P0_W4_E6
  * Digit Perkalian Minimum
  */
-
 function digitPerkalianMinimum(angka) {
-    console.log("\n")
-    var fpb = [];
-    // cari faktor
+    var factor = [];
     for (var i = 1; i <= angka; i++) {
-        if (angka % i === 0) {
-            fpb.push([i])
-        }
-    }
-    // console.log(fpb);
-    // bandingkan hasil faktor apakah sesuai dengan angka
-    var duaFaktor = [];
-    for (var i = 0; i < fpb.length; i++) {
-        var isFaktor = false;
-        var index = -1;
-        for (var j = 0; j < duaFaktor.length; j++) {
-            if (fpb[i] * duaFaktor[j] === angka) {
-                isFaktor = true;
-                index = j;
-                break;
+        for (var j = 1; j <= angka; j++) {
+            if (i * j == angka) {
+                factor.push(String(i) + String(j))
             }
         }
-        if (isFaktor === false) {
-            duaFaktor.push([fpb[i]]);
-        } else {
-            duaFaktor[index].push(fpb[i]);
+    }
+    console.log(factor)
+    var min = factor[0].length;
+    for (var k = 0; k < factor.length; k++) {
+        if (min > factor[k].length) {
+            min = factor[k].length
+            console.log(factor[k])
         }
     }
-    console.log(duaFaktor)
-    // return duaFaktor;
-    // pasangan faktor dengan jumlah terkecil
-    var fpbMin = Number(fpb[fpb.length - 1]) + 10
-    // var fpbMin = 
-    var indexFpbMin;
-    for (var k = 0; k < duaFaktor.length; k++) {
-        var cariFpbMin = true;
-        var banding = Number(duaFaktor[k][0]) + Number(duaFaktor[k][1])
-        if (banding < fpbMin) {
-            fpbMin = banding;
-            indexFpbMin = k;
-        }
-    }
-
-    if (angka === 1) {
-        return 2;
-    } else if (duaFaktor.length === 1) {
-        return 4;
-    } else {
-        return "===> "  + duaFaktor[indexFpbMin] + ' di index ke - '+indexFpbMin 
-    }
+    return min;
 }
 
+// TEST CASES
 console.log(digitPerkalianMinimum(24)); // 2
 console.log(digitPerkalianMinimum(90)); // 3
 console.log(digitPerkalianMinimum(20)); // 2
