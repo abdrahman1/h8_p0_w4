@@ -1,3 +1,7 @@
+
+
+
+
 /**
  * H8_P0_W4_E12
  * Toko X
@@ -21,19 +25,14 @@ function countProfit(shoppers) {
         };
         
         for (var j = 0; j < shoppers.length; j++) {
-            var objCostumers = {
-                product: shoppers[j].product,
-                name: shoppers[j].name, //customers na
-                amount: shoppers[j].amount,
-            }
             
-            if (objProfit.product === objCostumers.product) {
-                if (objProfit.leftOver >= objCostumers.amount) {
+            if (objProfit.product === shoppers[j].product) {
+                if (objProfit.leftOver >= shoppers[j].amount) {
 
-                    objProfit.product = objCostumers.product;
-                    objProfit['name customers'].push(objCostumers.name);
-                    objProfit.leftOver -= objCostumers.amount;
-                    objProfit.totatProfit += objCostumers.amount *  listBarang[i][1];
+                    objProfit.product = listBarang[i][0];
+                    objProfit['name customers'].push(shoppers[j].name);
+                    objProfit.leftOver -= shoppers[j].amount;
+                    objProfit.totatProfit += shoppers[j].amount *  listBarang[i][1];
                 }
             }
         }
